@@ -1,0 +1,9 @@
+.container {
+  margin-top: 15%;
+  margin-left: 25%;
+  position: relative;
+}
+#newGame {
+  margin-bottom: 20px;
+  margin-left: 25%;
+}
