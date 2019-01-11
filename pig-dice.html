@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pig-Dice</title>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Hind+Siliguri">
-    </head>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pig Dice</title>
+</head>
+
 <body>
-<div class="start-menu container">
-    <div class="what">
-	  <h1>Pig-Dice</h1>
-      <h3>Let's play!</h3>
-<!---form for player1----->
-        <form id="player-1">
-          <div class="form-group">
-            <label for="player1Name">Player 1:</label><br>
-            <input required class="player1Name" type="text" placeholder="Enter your name">
-          </div>
-        </form>
-<!---form for player2----->
-        <form id="player-2">
-          <div class="form-group">
-            <label for="player2Name">Player 2:</label><br>
-            <input required class="player2Name" type="text" placeholder="Enter your name">
-          </div>
-        </form>
-<!---button to start your game-->
-        <button id="start" class="btn">Start</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-2">
+      </div>
+      <div class="col-xs-4 title text-left">
+        <h1 id="top">Pig</h1>
+        <h1 id="bottom">Dice</h1>
+      </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 text-center">
+        <p>
+          The objective of the Pig Dice Game is to score 100 points before your opponent does. The game is played with a single six-sided die. Continue rolling the die until you are happy with the number of points you have scored, and end your turn. If you roll a one, you lose all the points you accumulated during that turn, and you lose your turn.
+        </p>
+      </div>
+    </div>
+    </br>
 
-  <div class="player-console container">
-      <button id="new-game" class="btn">NEW GAME </button>
-      <div class = "row">
-        <div class="col-md-6">
-          <h2>Player 1: <span id = "player1Name"><span></h2>
-            <button id="player1-roll" class="btn">Roll</button>
-            <button id="player1-hold" class="btn">Hold</button>
-          <h2 id="die-roll-1">Dice Roll: </h2>
-          <p id="round-total-1">Round Total: </p>
-          <p id="total-score-1">Players Score: </p>
+    <div class="row" id="players">
+      <div class="col-xs-4 col-xs-offset-2 active text-center" id="player1">
+      <h3><span class="player">Player 1</span> Score: <span id="player1-score"></span></h3>
+      </div>
+      <div class="col-xs-4  text-center" id="player2">
+      <h3><span class="player">Player 2</span> Score: <span id="player2-score"></span></h3>
+      </div>
+    </div>
+    </br>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 text-center">
+          <h3>Turn Total: <span id="roll-total"></span></h3>
+          <h3>Current Roll: <span id="roll"></span></h3>
+          </br>
         </div>
+    </div>
 
-      <div class="col-md-6">
-        <h2>Player 2: <span id = "player2Name"><span></h2>
-          <button id="player2-roll" class="btn">Roll</button>
-          <button id="player2-hold" class="btn">Hold</button>
-          <h2 id="die-roll-2">Dice Roll: </h2>
-          <p id="round-total-2">Round Total: </p>
-          <p id="total-score-2">Players Score: </p>
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-3">
+        <form id="roll">
+            <button type="submit" class="btn btn-default btn-lg">Roll dice</button>
+        </form>
       </div>
+      <div class="col-xs-3 ">
+        <form id="end-turn">
+          <button type="submit" class="btn btn-default btn-lg ">End turn</button>
+        </form>
       </div>
     </div>
-<!--Bootstrap scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--JQUERY-->	   
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="JS/script.js"></script>
+
 </body>
+
 </html>

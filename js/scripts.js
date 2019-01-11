@@ -1,110 +1,124 @@
-//business logic
-var player1 = "";
-var player2 = "";
+// Business logic
 
-var throwdice = function() {
-  return Math.floor(6 * Math.random()) + 1;
+//Creates a player and sets initial score to 0
+function Player(userName) {
+  this.userName = userName;
+  this.score = 0;
 }
 
-function Player(turn) {
-  this.roll = 0;
-  this.tempscore = 0;
-  this.totalscore = 0;
-  this.turn = turn;
-  this.playerName;
+//pass it a player object!
+function Turn(player) {
+  this.total = 0;
+  this.randNumber = 0;
+  this.player = player;
 }
 
-Player.prototype.rollone = function() {
-  if (this.roll === 1) {
-    this.tempscore = 0;
-    alert("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!")
+//Creates random number, saves it and then returns it
+Turn.prototype.diceRoller = function(player1, player2) {
+  var randNumber = Math.floor(Math.random() * 6) + 1;
+  this.total += randNumber;
 
+  if (randNumber == 1) {
+    this.total = 0;
+    this.endTurn(player1, player2);
+    // this.randNumber += randNumber;
+    return randNumber;
   } else {
-    this.tempscore += this.roll;
+    this.randNumber += randNumber;
+    return randNumber;
   }
-}
+};
 
-Player.prototype.hold = function() {
-  this.totalscore += this.tempscore;
-  this.tempscore = 0;
-  alert(this.playerName + ", your turn is over, pass the mouse!");
-}
-
-Player.prototype.winnerCheck = function() {
-  if (this.totalscore >= 100) {
-    alert(this.playerName + " You are the winner!");
+Turn.prototype.endTurn = function(player1, player2) {
+  //adding total to score
+  this.player.score += this.total;
+  //and clearing total
+  this.total = 0;
+  this.randNumber = 0;
+  if (this.player == player1) {
+    this.player = player2;
+    $("#player2").toggleClass("active");
+    $("#player1").toggleClass("active");
+  } else if (this.player == player2) {
+    this.player = player1;
+    $("#player2").toggleClass("active");
+    $("#player1").toggleClass("active");
   }
-}
-
-Player.prototype.newGame = function() {
-  this.roll = 0;
-  this.tempscore = 0;
-  this.totalscore = 0;
-  this.playerName = "";
-}
-
-// User Interface
+};
+// interface logic
 $(document).ready(function() {
+  var player1 = new Player("Player 1");
+  var player2 = new Player("Player 2");
 
-  $("button#start").click(function(event) {
-    player1 = new Player(true);
-    player2 = new Player(false);
-    $(".player-console").show();
-    $(".start-menu").hide();
+  //Start current turn with player1, will be switched to player2 in endTurn
+  var currentTurn = new Turn(player1);
 
-    var player1Name = $(".player1Name").val();
-    $("#player1Name").text(player1Name);
+  var total = currentTurn.total;
 
-    var player2Name = $(".player2Name").val();
-    $("#player2Name").text(player2Name);
+  //jquery animations
+  $("#player1")
+    .hide()
+    .show("slow");
+  $("#player2")
+    .hide()
+    .show("slow");
+  $("h1")
+    .hide()
+    .show("slow");
+  $("p")
+    .hide()
+    .show("slow");
 
-    player1.playerName = player1Name;
-    player2.playerName = player2Name;
+  //Prints initial Turn Total of 0
+  $("#roll-total").text(total);
 
-  });
-  $("button#new-game").click(function(event) {
-    $(".player-console").hide();
-    clearValues();
-    player1.newGame();
-    player2.newGame();
-    $("#round-total-1").empty();
-    $("#total-score-1").empty();
-    $("#die-roll-1").empty();
-    $("#round-total-2").empty();
-    $("#total-score-2").empty();
-    $("#die-roll-2").empty();
+  //Prints initial player scores of 0
+  $("#player1-score").text(player1.score);
+  $("#player2-score").text(player2.score);
 
-    $(".start-menu").show();
-  });
+  //Prints current Player
+  $("#current_player").text(currentTurn.player.userName);
 
-  $("button#player1-roll").click(function(event) {
-    player1.roll = throwdice();
-    $("#die-roll-1").text(player1.roll);
-    player1.rollone();
-    $("#round-total-1").text(player1.tempscore);
-  });
+  //This code runs when you click the Roll button
+  $("form#roll").submit(function(event) {
+    event.preventDefault();
 
-  $("button#player2-roll").click(function(event) {
-    player2.roll = throwdice();
-    $("#die-roll-2").text(player2.roll);
-    player2.rollone();
-    $("#round-total-2").text(player2.tempscore);
-  });
+    //Creates a dice roll number
+    var result = currentTurn.diceRoller(player1, player2);
 
-  $("button#player1-hold").click(function(event) {
-    player1.hold();
-    $("#total-score-1").text(player1.totalscore);
-    $("#round-total-1").empty();
-    $("#die-roll-1").empty();
-    player1.winnerCheck();
-  });
+    //Prints the roll number to the page
+    $("#roll").text(result);
 
-  $("button#player2-hold").click(function(event) {
-    player2.hold();
-    $("#total-score-2").text(player2.totalscore);
-    $("#round-total-2").empty();
-    $("#die-roll-2").empty();
-    player2.winnerCheck();
+    //Prints the roll total to the page
+    $("#roll-total").text(currentTurn.total);
+
+    //Determines the winner and prints player score to page
+    if (currentTurn.total + currentTurn.player.score >= 100) {
+      if (currentTurn.player == player1) {
+        $("#player1-score").text(currentTurn.total + currentTurn.player.score);
+        alert("You are the winner!");
+      } else if (currentTurn.player == player2) {
+        $("#player2-score").text(currentTurn.total + currentTurn.player.score);
+        alert("You are the winner!");
+      }
+    }
   });
 
+  //This code runs when you click the End Turn button
+  $("form#end-turn").submit(function(event) {
+    event.preventDefault();
+
+    currentTurn.endTurn(player1, player2);
+
+    //Prints current Player
+    $("#current_player").text(currentTurn.player.userName);
+
+    //Prints players scores
+    $("#player1-score").text(player1.score);
+    $("#player2-score").text(player2.score);
+
+    //Prints the cleared Current Roll and Turn Total on page
+    $("#roll").text(currentTurn.randNumber);
+    $("#roll-total").text(currentTurn.total);
+  });
 });
