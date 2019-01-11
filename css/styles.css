@@ -9,8 +9,6 @@ h1 {
 }
 
 h1#top {
-  color: #ff9999;
-  color: #ff99bb;
   color: #ff6699;
   font-size: 7em;
 }
@@ -74,7 +72,7 @@ p {
 .container {
   background: #fff;
   background: rgba(255, 255, 255, 0.99);
-  border: 10px solid #ff6699;
+ background-image: url("https://images.pexels.com/photos/63285/pig-alp-rona-furna-sow-63285.jpeg");
   border-radius: 15px;
   width: 500px;
   margin: auto;
@@ -86,7 +84,6 @@ p {
 }
 
 body {
-  background-image: url("https://images.pexels.com/photos/63285/pig-alp-rona-furna-sow-63285.jpeg");
   background: #f9b;
   /*border: 10px solid #FF6699;*/
   color: #333;
