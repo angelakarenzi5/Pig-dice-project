@@ -72,7 +72,7 @@ p {
 .container {
   background: #fff;
   background: rgba(255, 255, 255, 0.99);
- background-image: url("https://images.pexels.com/photos/63285/pig-alp-rona-furna-sow-63285.jpeg");
+ 
   border-radius: 15px;
   width: 500px;
   margin: auto;
@@ -84,15 +84,10 @@ p {
 }
 
 body {
-  background: #f9b;
+  background-image: url("https://images.pexels.com/photos/63285/pig-alp-rona-furna-sow-63285.jpeg");
   /*border: 10px solid #FF6699;*/
   color: #333;
   height: 100%;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 .btn {
