@@ -24,3 +24,10 @@ Player.prototype.hold = function() {
   // this.changeturn();
   alert(this.playerName + ", your turn is over, pass the mouse!");
 };
+
+// check for the winner
+Player.prototype.winnerCheck = function() {
+  if (this.totalscore >= 10) {
+    alert(this.playerName + " You are the winner!");
+  }
+};
