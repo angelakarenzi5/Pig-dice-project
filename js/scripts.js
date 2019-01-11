@@ -31,3 +31,11 @@ Player.prototype.winnerCheck = function() {
     alert(this.playerName + " You are the winner!");
   }
 };
+
+// check for newGame
+Player.prototype.newGame = function () {
+    //debugger;
+    this.roll = 0;
+    this.tempscore = 0;
+    this.totalscore = 0;
+  }
