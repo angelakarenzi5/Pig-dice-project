@@ -39,3 +39,14 @@ Player.prototype.newGame = function () {
     this.tempscore = 0;
     this.totalscore = 0;
   }
+
+  // User Interface
+  $(document).ready(function() {
+    $("button#start").click(function(event){
+        player1 = new Player(true);
+        player2 =  new Player(false);
+        $(".player-console").show();
+        $(".start-menu").hide();
+    
+
+  });
