@@ -1,5 +1,8 @@
 // Business logic
-function Player(player1, player2){
-    this.player1= player1;
-    this.player2=player2;
+function Player(turn) {
+  this.roll = 0;
+  this.tempscore = 0;
+  this.totalscore = 0;
+  this.turn = turn;
+  this.playerName;
 }
