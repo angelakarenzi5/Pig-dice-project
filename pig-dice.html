@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pig Dice Project</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    
-  </head>
-  <body>
-      <div class="container">
-          <button id="newGame" class="btn-success btn">NEW GAME</button>
-          <div class = "row">
-            <div class="col-md-6">
-              <h1>Player 1 <span id = "player1"><span></h1>
-                <button id="player1-roll" class="btn-success btn">Roll</button>
-                <button id="player1-hold" class="btn-success btn">Hold</button>
-              <h2>Dice Roll: <span id="die-roll-1"></span></h2>
-              <p>Round Total: <span id="round-total-1"></span></p>
-              <p>Total Score: <span id="total-score-1"></span></p>
-            </div>
-          <div class="col-md-6">
-            <h1>Player 2 <span id = "player2"><span></h1>
-              <button id="player2-roll" class="btn-success btn">Roll</button>
-              <button id="player2-hold" class="btn-success btn">Hold</button>
-              <h2>Dice Roll: <span id="die-roll-2"></span></h2>
-              <p>Round Total: <span id="round-total-2"></span></p>
-              <p>Total Score: <span id="total-score-2"></span></p>
+    <head>
+        <title>Pig-Dice</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Hind+Siliguri">
+    </head>
+<body>
+<div class="start-menu container">
+    <div class="what">
+	  <h1>Pig-Dice</h1>
+      <h3>Let's play!</h3>
+<!---form for player1----->
+        <form id="player-1">
+          <div class="form-group">
+            <label for="player1Name">Player 1:</label><br>
+            <input required class="player1Name" type="text" placeholder="Enter your name">
           </div>
-          <img src="https://bit.ly/2D2KRZL" alt="Dice" class="dice" width="100px" height="100px">
-            <img src="https://bit.ly/2D2KRZL" alt="Dice" class="dice" width="100px" height="100px">
+        </form>
+<!---form for player2----->
+        <form id="player-2">
+          <div class="form-group">
+            <label for="player2Name">Player 2:</label><br>
+            <input required class="player2Name" type="text" placeholder="Enter your name">
           </div>
+        </form>
+<!---button to start your game-->
+        <button id="start" class="btn">Start</button>
+    </div>
+  </div>
+
+  <div class="player-console container">
+      <button id="new-game" class="btn">NEW GAME </button>
+      <div class = "row">
+        <div class="col-md-6">
+          <h2>Player 1: <span id = "player1Name"><span></h2>
+            <button id="player1-roll" class="btn">Roll</button>
+            <button id="player1-hold" class="btn">Hold</button>
+          <h2 id="die-roll-1">Dice Roll: </h2>
+          <p id="round-total-1">Round Total: </p>
+          <p id="total-score-1">Players Score: </p>
         </div>
-        <script type="text/javascript" src="js/scripts.js"></script>
-  </body>
+
+      <div class="col-md-6">
+        <h2>Player 2: <span id = "player2Name"><span></h2>
+          <button id="player2-roll" class="btn">Roll</button>
+          <button id="player2-hold" class="btn">Hold</button>
+          <h2 id="die-roll-2">Dice Roll: </h2>
+          <p id="round-total-2">Round Total: </p>
+          <p id="total-score-2">Players Score: </p>
+      </div>
+      </div>
+    </div>
+<!--Bootstrap scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--JQUERY-->	   
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="JS/script.js"></script>
+</body>
 </html>
