@@ -78,7 +78,9 @@ p {
 body {
   background-image: url("https://images.pexels.com/photos/63285/pig-alp-rona-furna-sow-63285.jpeg");
   color: #333;
-  background-position: top right;
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: left top;
 }
 
 .btn {
