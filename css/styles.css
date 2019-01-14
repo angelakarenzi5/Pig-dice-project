@@ -1,17 +1,14 @@
 h1 {
   text-align: center;
   font-family: cursive;
-  padding: 0;
-  padding-left: 30px;
+  padding-right:10px;
   padding-top: 15px;
   margin: 0;
   line-height: 0.8;
 }
-h1{
-  font-size: 7em;
-  margin-top: 0;
-  padding-top:0;
-  color:blue;
+h1 {
+  font-size: 70px;
+  color: blue;
 }
 
 .title {
@@ -58,7 +55,7 @@ h3 {
 
 p {
   margin-top: 25px;
-  color:rgb(135, 166, 250);
+  color: rgb(135, 166, 250);
 }
 
 #players {
