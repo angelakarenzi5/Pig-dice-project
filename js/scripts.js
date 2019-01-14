@@ -55,7 +55,6 @@ $(document).ready(function() {
 
   var total = currentTurn.total;
 
-  //jquery animations
   $("#player1")
     .hide()
     .show("slow");
