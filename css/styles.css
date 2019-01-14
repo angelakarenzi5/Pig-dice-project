@@ -1,9 +1,8 @@
 h1 {
   text-align: center;
   font-family: cursive;
-  padding-right:10px;
+  padding-right: 30px;
   padding-top: 15px;
-  margin: 0;
   line-height: 0.8;
 }
 h1 {
@@ -55,7 +54,7 @@ h3 {
 
 p {
   margin-top: 25px;
-  color: rgb(135, 166, 250);
+  color: rgb(137, 135, 250);
 }
 
 #players {
@@ -78,14 +77,12 @@ p {
 
 body {
   background-image: url("https://images.pexels.com/photos/63285/pig-alp-rona-furna-sow-63285.jpeg");
-  /*border: 10px solid #FF6699;*/
   color: #333;
-  height: 100%;
+  background-position: top right;
 }
 
 .btn {
   /*margin-right: 20px;*/
-  /*border-width: 2px !important;*/
   padding: 10px 25px;
 }
 
