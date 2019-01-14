@@ -10,8 +10,8 @@ The purpose of this project is to display the end result of what was taught in w
 
 ## Setup/Installation Requirements
 
-Refer to git clone: https://github.com/angelakarenzi5/Quiz.git details of code, therefore, you need a code editor.
-You need a browser, to open https://angelakarenzi5.github.io/Quiz/ order to view my webpage.
+Refer to git clone: https://github.com/angelakarenzi5/Pig-dice-project.git  details of code, therefore, you need a code editor.
+You need a browser, to open https://angelakarenzi5.github.io/Pig-dice-project/pig-dice.html in order to view my webpage.
 
 ## Known Bugs
 
