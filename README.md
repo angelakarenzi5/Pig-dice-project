@@ -1,12 +1,13 @@
 # Pig-dice
 
-#### Pig dice is the output project of what was taught in week three of prep at Moringa school, Friday, 21,2018
+#### Pig dice is the output project of what was taught in week four of prep at Moringa school, Friday, 11,2019
 
 #### By Angela Uwase Karenzi
 
 ## Description
 
-The purpose of this project is to display the end result of what was taught in week 3, we went over a week of learning how forms work, thus ended up creating our own forms
+The purpose of this project is to display the end result of what was taught in week 4, we went over a week of learning how constructors, prototypes, objects, properties and methods in Javascript work as well as using jQuery, thus ended up creating our own pig dice game.
+
 ## Setup/Installation Requirements
 
 Refer to git clone: https://github.com/angelakarenzi5/Quiz.git details of code, therefore, you need a code editor.
@@ -22,7 +23,6 @@ No issues whatsoever
 2.CSS to style my codes,
 3.JavaScript to make my webpages interactive,
 4.Bootstrap.css
-
 
 ## Support and contact details
 
